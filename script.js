@@ -48,3 +48,33 @@ function textToSpeech(text) {
             utterance.voice = voice;
         }
     }
+
+// Uses the Speech Synthesis API to speak the utterance with the selected voice
+    synth.speak(utterance);
+}
+
+// Event listener for the "Convert To Speech" button click
+speechBtn.addEventListener("click", e => {
+    // Prevents the default behavior of the button click (form submission, page reload, etc.)
+    e.preventDefault();
+
+    // Checks if the textarea has content
+    if (textarea.value !== "") {
+        // Checks if the Speech Synthesis API is not currently speaking
+        if (!synth.speaking) {
+            // Calls the 'textToSpeech' function to convert the textarea content to speech
+            textToSpeech(textarea.value);
+        }
+
+        // Checks if the textarea content is longer than 80 characters
+        if (textarea.value.length > 80) {
+            // Sets an interval to check if speech is no longer happening
+            setInterval(() => {
+                if (!synth.speaking && !isSpeaking) {
+                    // Updates 'isSpeaking' and button text when speech is finished
+                    isSpeaking = true;
+                    speechBtn.innerText = "Convert To Speech";
+                } else {
+                    // Do nothing if speech is still happening or 'isSpeaking' is true
+                }
+            }, 500); // Interval set to 500 milliseconds (0.5 seconds)
