@@ -78,3 +78,21 @@ speechBtn.addEventListener("click", e => {
                     // Do nothing if speech is still happening or 'isSpeaking' is true
                 }
             }, 500); // Interval set to 500 milliseconds (0.5 seconds)
+// Continuation of the event listener for the "Convert To Speech" button click
+if (isSpeaking) {
+    // If speech is currently happening, resume the speech
+    synth.resume();
+    isSpeaking = false;
+    speechBtn.innerText = "Pause Speech";
+} else {
+    // If speech is paused, pause the speech
+    synth.pause();
+    isSpeaking = true;
+    speechBtn.innerText = "Resume Speech";
+}
+} else {
+    // If the textarea is empty, update the button text
+    speechBtn.innerText = "Convert To Speech";
+}
+}
+});
