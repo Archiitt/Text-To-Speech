@@ -133,3 +133,38 @@ form button:hover{
   #0B63F6, #0c50ee, #FF0076, #6699FF, #FF0076);
  background-size: 400%;
 }
+form button:before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 50px;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+form button:hover:before{
+  opacity: 1;
+  z-index: -1;
+}
+button:hover{
+  z-index: 1;
+  animation: glow 8s linear infinite;
+}
+@keyframes glow {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 400%;
+  }
+}
+@media(max-width: 400px){
+  .wrapper{
+    max-width: 345px;
+    width: 100%;
+  }
+}
