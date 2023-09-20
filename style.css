@@ -113,10 +113,9 @@ form button{
   cursor: pointer;
   margin-top: 10px;
   transition: 0.3s ease;
-  position: relative; /* yaha se shuru hai */
+  position: relative;
   border: none;
   outline: none;
-  /*background: #675AFE;*/
   color: #fff;
   font-size: 20px;
   font-weight: 500;
@@ -127,44 +126,4 @@ form button{
   background: linear-gradient(-45deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
   box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
   border-radius: 50px; 
-}
-form button:hover{
-  background: linear-gradient(90deg, #F40076, #e095fd, #E233FF, #13E2DA, 
-  #0B63F6, #0c50ee, #FF0076, #6699FF, #FF0076);
- background-size: 400%;
-}
-form button:before{
-  content: '';
-  position: absolute;
-  background: inherit;
-  top: -5px;
-  right: -5px;
-  bottom: -5px;
-  left: -5px;
-  border-radius: 50px;
-  filter: blur(20px);
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-form button:hover:before{
-  opacity: 1;
-  z-index: -1;
-}
-button:hover{
-  z-index: 1;
-  animation: glow 8s linear infinite;
-}
-@keyframes glow {
-  0%{
-    background-position: 0%;
-  }
-  100%{
-    background-position: 400%;
-  }
-}
-@media(max-width: 400px){
-  .wrapper{
-    max-width: 345px;
-    width: 100%;
-  }
 }
