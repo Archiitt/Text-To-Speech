@@ -27,10 +27,6 @@ body{
   border-radius: 40px; 
   position: relative;
   overflow: hidden;
-  /* border-top: 1.5px solid rgba(255, 18, 18, 0.5);
-  border-right: 1.5px solid rgba(8, 238, 238, 0.5);
-  border-bottom: 1.5px solid rgba(57, 255, 20, 0.5);
-  border-left: 1.5px solid rgba(255, 255, 113, 0.5); */
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
